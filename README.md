@@ -10,6 +10,7 @@ This repository contains Terraform code to create a [Squid](http://www.squid-cac
 - A SecurityGroup (SG) for the instances
 - CloudWatch autoscaling polices
 - An SSH keypair for access to the proxy instances
+  - Note: The SSH private key is stored in the Terraform statefile. You should ensure your state storage location (S3/Git/etc.) is secure.
 - Appropriate names and tags on all resources
 
 The stack uses an existing official CentOS AMI by default. The Squid proxy is installed and configured via a user data script on the ASG LaunchConfiguration. You should be able to easily replace the AMI with any CentOs/RedHat compatible AMI.
